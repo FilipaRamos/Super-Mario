@@ -5,6 +5,7 @@ package game.gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.GridLayout;
 
 import javax.print.DocFlavor.URL;
 import javax.swing.JFrame;
@@ -36,6 +37,11 @@ public class Game extends JPanel{
 	
 	
 	public JLabel img;
+
+
+	JPanel butoes;
+	
+	public JButton inicio,fim;
 	
 	ImageIcon icon = new ImageIcon("../Super-Mario/resources/gif1.gif");
 	
@@ -65,9 +71,17 @@ public class Game extends JPanel{
 	public void inicia()
 	{
 		painel = new JFrame();
+		painel.setSize(new Dimension(620,620));
+		inicio = new JButton("Start Game");
+		butoes = new JPanel();
+		fim = new JButton("End Game");
+		butoes.add(inicio);
+		butoes.add(fim);
 		img = new JLabel(icon);
 		painel.getContentPane().add(img);
-		painel.setSize(new Dimension(620,620));
+		img.setLayout(new GridLayout(0, 3, 0, 1));
+		painel.getContentPane().add(butoes,BorderLayout.SOUTH);
+		butoes.setLayout(new GridLayout(1, 0, 0, 0));
 		painel.setTitle("Mario Adventure");
 	}
 

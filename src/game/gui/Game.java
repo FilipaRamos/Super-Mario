@@ -1,7 +1,4 @@
 package game.gui;
-
-
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -34,10 +31,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Game extends JPanel{
 	
 	public  JFrame painel;
-	
-	
 	public JLabel img;
-
 
 	JPanel butoes;
 	
@@ -83,6 +77,7 @@ public class Game extends JPanel{
 		painel.getContentPane().add(butoes,BorderLayout.SOUTH);
 		butoes.setLayout(new GridLayout(1, 0, 0, 0));
 		painel.setTitle("Mario Adventure");
+		Background b = new Background(0,0);
 	}
 
 }

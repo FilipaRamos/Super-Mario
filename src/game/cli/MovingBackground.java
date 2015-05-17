@@ -19,5 +19,10 @@ public class MovingBackground {
 		image2 = new Background(image1.getWidth(), 0);
 	}
 	
+	void moveBackground(){
+		image1.incrementar();
+		image2.incrementar();
+	}
+	
 	
 }

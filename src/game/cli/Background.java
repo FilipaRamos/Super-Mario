@@ -1,17 +1,20 @@
 package game.cli;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 public class Background {
 	
 	private ImageIcon background;
 	private int x;
 	private int y;
+	public JLabel imagem;
 	
 	// CONSTRUTOR SEM ARGUMENTOS
 	public Background(){
@@ -25,18 +28,18 @@ public class Background {
 		y = y_position;
 		
 		background = new ImageIcon("C:/Users/Filipa/workspace/Super-Mario/resources/background.png");
+		imagem = new JLabel(background);
+		imagem.setLayout(new GridLayout(0, 3, 0, 1));
 	}
 	
-	// DESENHAR A IMAGEM DE FUNDO
-	public void draw(){
+	// INCREMENTAR A POSIÇÃO DA IMAGEM DE FUNDO
+	public void incrementar(){
 		// mover a imagem
-		x -= 5;
-		// verificar se a imagem saiu do ecrã
-		if (x <= -1*getWidth()){
-			// ajustar se sair
-			x += getWidth() * 2;
-		}
-			
+		x -= 5;		
+	}
+	
+	public void draw(){
+		
 	}
 	
 	// DEVOLVER A POSIÇÃO DO X
